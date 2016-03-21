@@ -6,22 +6,6 @@
 
 \paper {
   #(set-paper-size "a4")
-  top-margin = 2
-  bottom-margin = 2
-  left-margin = 4
-  right-margin = 2
-  indent = 0
-  short-indent = 0
-  page-limit-inter-system-space = ##t
-
-  head-separation = 0
-  between-system-space = 0
-  between-system-padding = 0
-
-  system-system-spacing #'basic-distance = #8
-  system-system-spacing #'minimum-distance = #8
-  system-system-spacing #'padding = #0
-
 }
 
 \book {
@@ -47,7 +31,31 @@
       }
     >>
     \layout {}
-    \midi {}
   }
+}
+
+\book {
+  \bookOutputName "AChristmasDancePartyNo1"
+  \score {
+    \unfoldRepeats {
+      <<
+	\new Staff {
+	  \set Staff.midiInstrument = #"bass"
+	  \include "music/AChristmasDancePartyNo1-Bass.ly"
+	}
+	\new DrumStaff = TickToc <<
+	  \new DrumVoice = "ticktock" {
+	    \drummode {
+	      \set DrumStaff.instrumentName = "TickTock"
+	      \repeat unfold 206 {
+		hiwoodblock 4 lowoodblock lowoodblock lowoodblock
+	      }
+	    }
+	  }
+	>>
+      >>
+    }
+    \midi {\tempo 4 = 120}
+  } 
 }
 

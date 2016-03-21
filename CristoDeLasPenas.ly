@@ -1,21 +1,21 @@
 \version "2.16.1"
 
 \include "format.ly"
-#(set-global-staff-size 18)
+#(set-global-staff-size 28)
 
 
 \book {
   \bookpart {
     \header {
-      title = "Al cristo de los gitanos"
-      composer = ""
-      instrument = "Trombón 3º"
+      title = "Cristo de las Penas"
+      composer = "P. Artola"
+      instrument = "Trombón 2º"
     }
     
     \score {
       \new Staff {
 	\set Voice.countPercentRepeats = ##t
-	\include "music/AlCristoDeLosGitanos-Trombon3.ly"
+	\include "music/CristoDeLasPenas-Trombon2.ly"
       }
       \layout {}
     }
@@ -27,7 +27,7 @@
     <<
       \new Staff {
 	\set Staff.midiInstrument = #"trombone"
-	\include "music/AlCristoDeLosGitanos-Trombon3.ly"
+	\include "music/CristoDeLasPenas-Trombon2.ly"
       }
       \new DrumStaff = TickToc <<
 	\new DrumVoice = "ticktock" {

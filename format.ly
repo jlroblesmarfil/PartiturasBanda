@@ -1,14 +1,14 @@
 \version "2.16.1"
 
 \paper {
-  #(set-paper-size "a4" 'landscape)
+  #(set-paper-size "a5" 'landscape)
 				%print-all-headers = ##t
   % annotate-spacing = ##t
   
-  top-margin = 4
-  bottom-margin = 4
-  left-margin = 10
-  right-margin = 4
+  top-margin = 2
+  bottom-margin = 2
+  left-margin = 4
+  right-margin = 2
   indent = 0
   short-indent = 0
   page-limit-inter-system-space = ##t

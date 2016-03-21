@@ -1,21 +1,59 @@
 \version "2.16.1"
 
 \include "format.ly"
-#(set-global-staff-size 15.3)
+#(set-global-staff-size 15.2)
 
 \book {
-  \header {
-    title = "Amarguras"
-    composer = "Font de Anta"
-    instrument = "Trombón 3º"
+  \bookpart {
+    \header {
+      title = "Amarguras"
+      composer = "Font de Anta"
+      instrument = "Trombón 2º"
+    }
+    \score {
+      \new Staff {
+	\set Voice.countPercentRepeats = ##t
+	\include "music/Amarguras-Trombon2.ly"
+      }
+      \layout {}
+    }
   }
   
-  \score {
-    \new Staff {
-      \set Voice.countPercentRepeats = ##t
-      \include "music/Amarguras-Trombon3.ly"
+  \bookpart {
+    \header {
+      title = "Amarguras"
+      composer = "Font de Anta"
+      instrument = "Trombón 3º"
     }
-    \layout {}
+    \score {
+      \new Staff {
+	\set Voice.countPercentRepeats = ##t
+	\include "music/Amarguras-Trombon3.ly"
+      }
+      \layout {}
+    }
+  }
+
+  \bookpart {
+    \header {
+      title = "Amarguras"
+      composer = "Font de Anta"
+      instrument = "Trombón 2-3"
+    }
+    \score {
+      \new Staff <<
+	\set Voice.countPercentRepeats = ##t
+	\new Voice="Trombon 2º" {
+	  \voiceOne
+	  \include "music/Amarguras-Trombon2.ly"
+	}
+	\new Voice="Trombón 3º" {
+	  \voiceTwo
+	  \include "music/Amarguras-Trombon3.ly"
+	}
+      >>
+      \layout {}
+    }
   }
 }
 
