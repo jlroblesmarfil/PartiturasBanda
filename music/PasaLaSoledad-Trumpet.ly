@@ -1,7 +1,6 @@
 \relative c'' {
   \time 4/4
   \key ees \major
-  \repeat unfold 12 r1 |
   r4 r \times 2/3 {r aes\mf g} |\mark^\markup{\box "1"}
   aes2 \times 2/3 {aes4 aes g} |
   \times 2/3 {f g aes} aes4. \times 2/3 {bes16 (aes g)} |

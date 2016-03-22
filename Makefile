@@ -4,10 +4,10 @@ MP3=$(patsubst %.ly,mp3/%.mp3,$(LY))
 PDF=$(patsubst %.ly,pdf/%.pdf,$(LY))
 
 
-all:
-	+make pdf
-	+make mid
-	+make mp3
+all: $(PDF)
+	#+make pdf
+	#+make mid
+	#+make mp3
 
 pdf: $(PDF)
 mid: $(MID)
@@ -36,13 +36,15 @@ clean:
 
 
 pdf/%.pdf midi/%.midi: %.ly music/%*.ly format.ly format-title.ly
+	mkdir -p midi pdf
 	lilypond --pdf $<
 	mv $**.pdf pdf
 	cp pdf/$**.pdf ~/Dropbox/Musica/Trombon/PartiturasBanda/Pdf/
-	#mv $**.midi midi/$*.midi
-	#cp midi/$*.midi ~/Dropbox/Musica/Trombon/PartiturasBanda/Midi/
+	-mv $**.midi midi/$*.midi
+	-cp midi/$**.midi ~/Dropbox/Musica/Trombon/PartiturasBanda/Midi/
 
 mp3/%.mp3: midi/%.midi tuning.txt
+	mkdir -p mp3
 	timidity -Z tuning.txt $< -Ow -o $*.wav
 	normalize-audio "$*.wav"
 	lame $*.wav $@

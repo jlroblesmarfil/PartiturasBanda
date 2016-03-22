@@ -1,7 +1,5 @@
 \version "2.16.1"
 
-\time 2/4
-
 \relative c' { 
   r2 | 
   f8\accent\f  ees\accent d\accent cis\accent | d\accent ees\accent f\accent d\accent |
