@@ -7,7 +7,7 @@
   
   top-margin = 2
   bottom-margin = 2
-  left-margin = 4
+  left-margin = 6
   right-margin = 2
   indent = 0
   short-indent = 0

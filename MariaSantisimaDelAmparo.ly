@@ -1,12 +1,12 @@
 \version "2.16.1"
 
 \include "format.ly"
-#(set-global-staff-size 16.5)
+#(set-global-staff-size 16)
 
 \header {
-  title = "Carmen Coronada"
-  composer = "Sergio Bueno"
-  instrument = "Trombón 2 y 3"
+  title = "Maria Santisima del Amparo"
+  composer = "Jose A Molero"
+  instrument = "Trombón 2"
 }
 
 \book {
@@ -14,9 +14,9 @@
     \new Staff {
       <<
 	\set Voice.countPercentRepeats = ##t
-	\include "music/CarmenCoronada-Trombon3.ly"
+	%\include "music/MariaSantisimaDelAmparo-Trombon3.ly"
 	\\
-	\include "music/CarmenCoronada-Trombon2.ly"
+	\include "music/MariaSantisimaDelAmparo-Trombon2.ly"
       >>
     }
     \layout {
@@ -35,7 +35,7 @@
     \new Staff {
       <<
 	\set Voice.countPercentRepeats = ##t
-	\include "music/CarmenCoronada-Trombon2.ly"
+	%\include "music/MariaSantisimaDelAmparo-Trombon3.ly"
       >>
     }
     \layout {
@@ -44,14 +44,14 @@
 }
 
 \book {
-  \bookOutputName "CarmenCoronada"
+  \bookOutputName "MariaSantisimaDelAmparo"
   
   \score {
     \unfoldRepeats {
       <<
 	\new Staff {
 	  \set Staff.midiInstrument = #"trombone"
-	  \include "music/CarmenCoronada-Trombon3.ly"
+	  %\include "music/MariaSantisimaDelAmparo-Trombon3.ly"
 	}
 	\new DrumStaff = TickToc <<
 	  \new DrumVoice = "ticktock" {

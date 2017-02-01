@@ -3,26 +3,54 @@
 \include "format.ly"
 #(set-global-staff-size 17.25)
 
-\book {
-  \header {
-    title = "Aquella Virgen"
-    composer = "Manuel Gómez de Arribas"
-    instrument = "Trombón 3ª"
-  }
+\header {
+  title = "Aquella Virgen"
+  composer = "Manuel Gómez de Arribas"
+}
   
+
+\book {
+  \bookOutputSuffix "Trombones"
   \score {
+    \header{
+      instrument = "Trombón 2º y 3ª"
+    }
     \new Staff {
-      \set Voice.countPercentRepeats = ##t
-      \relative c {
-	\include "music/AquellaVirgen-Trombon3.ly"
-      }
+      \clef "bass"
+      <<
+	\include "music/AquellaVirgen-Trombon3.ly"\\
+	\include "music/AquellaVirgen-Trombon2.ly"
+      >>
     }
     \layout {}
   }
-  \paper {
-    system-system-spacing #'basic-distance = #11
-    %system-system-spacing #'minimum-distance = #10
-    %system-system-spacing #'padding = #0
+}
+
+\book {
+  \bookOutputSuffix "Trombon3"
+  \score {
+    \header{
+      instrument = "Trombón 3ª"
+    }
+    \new Staff {
+      \clef "bass"
+      \include "music/AquellaVirgen-Trombon3.ly"
+    }
+    \layout {}
+  }
+}
+
+\book {
+  \bookOutputSuffix "Trombon2"
+  \score {
+    \header{
+      instrument = "Trombón 2ª"
+    }
+    \new Staff {
+      \clef "bass"
+      \include "music/AquellaVirgen-Trombon2.ly"
+    }
+    \layout {}
   }
 }
 

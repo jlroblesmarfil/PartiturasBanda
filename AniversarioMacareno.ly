@@ -1,27 +1,22 @@
 \version "2.16.1"
 
 \include "format.ly"
-#(set-global-staff-size 18)
+#(set-global-staff-size 17.4)
 
 \book {
   \header {
     title = "Aniversario Macareno"
-    composer = "Velazquez Sanchez"
-    instrument = "Trombón 3º"
+    composer = "Velazquez"
+    instrument = "Trombón 2º"
   }
   
   \score {
     \new Staff {
       \set Voice.countPercentRepeats = ##t
-      \include "music/AniversarioMacareno-Trombon3.ly"
+      \include "music/AniversarioMacareno-Trombon2.ly"
     }
     \layout {}
   }
-  \paper {
-    system-system-spacing #'basic-distance = #8
-    system-system-spacing #'minimum-distance = #8
-    system-system-spacing #'padding = #1
-  }    
 }
 
 \book {
@@ -30,7 +25,7 @@
       <<
 	\new Staff {
 	  \set Staff.midiInstrument = #"trombone"
-	  \include "music/AniversarioMacareno-Trombon3.ly"
+	  \include "music/AniversarioMacareno-Trombon2.ly"
 	}
 	\new DrumStaff = TickToc <<
 	  \new DrumVoice = "ticktock" {
